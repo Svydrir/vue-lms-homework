@@ -18,7 +18,7 @@
         </li>
       </ul>
       <button type="submit">Ответить</button>
-      <div v-if="resultIsVisible">
+      <div v-if="isResultVisible">
         <h4
           v-if="studentAnswer === 'Оператор присваивания'"
           class="right"
@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       studentAnswer: '',
-      resultIsVisible: false,
+      isResultVisible: false,
       test: {
         title: 'Как называется "=" (знак равно) в JS?',
         rightAnswer: 'Оператор присваивания',
@@ -53,12 +53,12 @@ export default {
   methods: {
     showResult() {
       if (this.studentAnswer !== '') {
-        this.resultIsVisible = true;
-        return this.resultIsVisible;
+        this.isResultVisible = true;
+        return this.isResultVisible;
       }
     },
     resetResult() {
-      this.resultIsVisible = false;
+      this.isResultVisible = false;
     },
   },
 };
