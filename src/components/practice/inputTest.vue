@@ -12,7 +12,7 @@
         </li>
       </ul>
       <button type="submit">Ответить</button>
-      <div v-if="resultIsVisible">
+      <div v-if="isResultVisible">
         <h4
           v-if="studentAnswer == test.rightAnswer"
           class="right"
@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       studentAnswer: '',
-      resultIsVisible: false,
+      isResultVisible: false,
       test: {
         title: 'Укажи результат выражения 38%5',
         rightAnswer: 3,
@@ -46,12 +46,12 @@ export default {
   methods: {
     showResult() {
       if (this.studentAnswer !== '') {
-        this.resultIsVisible = true;
-        return this.resultIsVisible;
+        this.isResultVisible = true;
+        return this.isResultVisible;
       }
     },
     resetResult() {
-      this.resultIsVisible = false;
+      this.isResultVisible = false;
     },
   },
 };

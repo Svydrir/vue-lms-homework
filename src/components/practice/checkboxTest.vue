@@ -23,7 +23,7 @@
       >
         Ответить
       </button>
-      <div v-if="resultIsVisible">
+      <div v-if="isResultVisible">
         <h4
           v-if="isRightAnswer"
           class="right"
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       studentAnswer: [],
-      resultIsVisible: false,
+      isResultVisible: false,
       isRightAnswer: false,
       test: {
         title: 'Выбери допустимые названия для переменных в JS',
@@ -59,13 +59,13 @@ export default {
   methods: {
     showResult() {
       if (this.studentAnswer.length === 0) {
-        this.resultIsVisible = false;
-        return this.resultIsVisible;
+        this.isResultVisible = false;
+        return this.isResultVisible;
       }
-      this.resultIsVisible = true;
+      this.isResultVisible = true;
     },
     resetResult() {
-      this.resultIsVisible = false;
+      this.isResultVisible = false;
     },
     checkAnswer() {
       if (JSON.stringify(this.studentAnswer.sort()) === JSON.stringify(this.test.rightAnswer)) {
