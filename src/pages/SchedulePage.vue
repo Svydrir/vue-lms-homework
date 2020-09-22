@@ -7,7 +7,7 @@
       class="lesson"
     >
       <h2>Занятие № {{ lesson.id }}</h2>
-      <h3>Тема: {{ lesson.title }}</h3>
+      <h3>Тема: <router-link to="/lesson">{{ lesson.title }}</router-link></h3>
       <h4>Лектор: {{ lesson.teacher }}</h4>
       <span>
         Дата занятия: {{ lesson.date }}
